@@ -1,3 +1,0 @@
-Q: 在 main、int、function、char、= 中，哪些是C语言的关键字？
-
-A: int、char
