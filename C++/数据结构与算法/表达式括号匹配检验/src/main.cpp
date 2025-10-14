@@ -10,8 +10,8 @@ struct symbol {
 };
 
 class Stack {
-    public:
-        vector<symbol> stack;
+public:
+    vector<symbol> stack;
 
     [[nodiscard]] bool empty() const {
         return stack.empty();
@@ -39,7 +39,7 @@ int main() {
         Stack stack;
         int line = 0;
 
-        while (s.back() != '#') {
+        do {
             line++;
             getline(cin, s);
 
@@ -61,7 +61,7 @@ int main() {
                     stack.push(s.at(i), line, i + 1);
                     }
             }
-        }
+        } while (s.back() != '#');
 
         if (stack.empty()) {
             cout << "All symbols match" << endl;
