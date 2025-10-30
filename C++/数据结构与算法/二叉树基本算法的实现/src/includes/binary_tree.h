@@ -2,14 +2,14 @@
 #define C_BINARY_TREE_H
 #include <vector>
 
-template <class T>
+template<class T>
 struct Node {
     T data;
     Node* left;
     Node* right;
 };
 
-template <class T>
+template<class T>
 class BinaryTree {
 public:
     BinaryTree();
@@ -34,6 +34,7 @@ public:
     template<class U> friend void InOrder(Node<U>* node);
     template<class U> friend void PostOrder(Node<U>* node);
     template<class U> friend void LevelOrder(Node<U>* node);
+    template<class U> friend void Find(Node<U> * node);
 
 private:
     Node<T> * root;
@@ -42,17 +43,11 @@ private:
     void clear(Node<T> * node);
 };
 
-template<class T>
-void PreOrder(Node<T> * node);
-
-template<class T>
-void InOrder(Node<T> * node);
-
-template<class T>
-void PostOrder(Node<T> * node);
-
-template<class T>
-void LevelOrder(Node<T> * node);
+template<class T> void PreOrder(Node<T> * node);
+template<class T> void InOrder(Node<T> * node);
+template<class T> void PostOrder(Node<T> * node);
+template<class T> void LevelOrder(Node<T> * node);
+template<class T> void Find(Node<T> * node, Node<T> * root);
 
 #include "binary_tree.tpp"
 

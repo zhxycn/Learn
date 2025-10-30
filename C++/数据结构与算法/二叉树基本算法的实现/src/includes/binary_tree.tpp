@@ -291,3 +291,22 @@ void LevelOrder(Node<T> * node) {
         if (cur->right) q.push(cur->right);
     }
 }
+
+template<class T>
+void Find(Node<T> * root, const T& key) {
+    if (!root) return;
+    std::vector<Node<T>*> path;
+    std::function<bool(Node<T>*)> dfs = [&](Node<T>* cur) -> bool {
+        if (!cur) return false;
+        path.push_back(cur);
+        if (cur->data == key) return true;
+        if (dfs(cur->left) || dfs(cur->right)) return true;
+        path.pop_back();
+        return false;
+    };
+    if (dfs(root)) {
+        for (size_t i = 0; i + 1 < path.size(); ++i) {
+            std::cout << path[i]->data << " ";
+        }
+    }
+}

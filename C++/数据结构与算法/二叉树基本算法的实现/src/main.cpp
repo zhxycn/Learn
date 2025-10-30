@@ -16,7 +16,7 @@ int main() {
     cout << endl << "Please enter the traversal order (P: PreOrder, O: PostOrder, L: LevelOrder):" << endl;
     cin >> order;
 
-    const vector<char> seq(input.begin(), input.end());
+    const vector seq(input.begin(), input.end());
     tree.build(seq, order, '#');
 
     cout << endl << "Tree properties:" << endl;
